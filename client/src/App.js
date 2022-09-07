@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
+import { Toaster } from "react-hot-toast";
+import { AppLayout, Footer, Header, Loading } from "./shared";
+
+const CreateAppointment = lazy(() =>
+  import("modules/shared/createAppointment")
+);
+
+function Features() {
+  return (
+    <Routes>
+      <Route path="/" element={<CreateAppointment />} />
+    </Routes>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<Loading />}>
+      <BrowserRouter>
+        <AppLayout>
+          <AppLayout.Header>
+            <Header />
+          </AppLayout.Header>
+          <AppLayout.Feature>
+            <Features />
+          </AppLayout.Feature>
+          <AppLayout.Footer>
+            <Footer />
+          </AppLayout.Footer>
+        </AppLayout>
+      </BrowserRouter>
+      <Toaster containerStyle={{ top: 50 }} />
+    </Suspense>
   );
 }
 

@@ -1,0 +1,45 @@
+@import 'styles/theme.scss';
+
+.page {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 0.75rem;
+  max-width: 75%;
+  margin: auto;
+}
+
+.page-footer {
+  margin-top: 1rem;
+}
+
+.page-header {
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.page-header-container {
+  margin-bottom: 1rem;
+}
+
+.hover-primary:hover,
+.hover-primary:focus-visible {
+  background-color: $primary;
+  border: 1px solid $primary;
+}
+
+.hover-primary:hover > *,
+.hover-primary:focus-visible > * {
+  color: $warning !important;
+}
+
+.hover-danger:hover {
+  background-color: $danger;
+  border: 1px solid $danger;
+}
+
+.hover-danger:hover > *,
+.hover-danger:focus-visible > * {
+  color: $light !important;
+}

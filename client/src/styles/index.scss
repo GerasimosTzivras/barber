@@ -1,0 +1,43 @@
+@import 'styles/theme.scss';
+
+//@import '~react-big-calendar/lib/css/react-big-calendar.css';
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  font-size: 0.85rem !important;
+}
+
+#root {
+  height: 100vh;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 9px;
+  background-color: #f5f5f5;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(to left, #fff, #e4e4e4);
+  border: 1px solid #aaa;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: $blue;
+}

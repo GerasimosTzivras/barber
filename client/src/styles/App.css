@@ -1,0 +1,84 @@
+:root {
+  --iris-header-height: 50px;
+  --iris-footer-height: 20px;
+  --iris-content-height: calc(
+    100vh - calc(var(--iris-header-height) + var(--iris-footer-height))
+  );
+}
+
+.sticky-top {
+  z-index: 999;
+}
+
+.shell-header {
+  padding: 0 1rem;
+  height: var(--iris-header-height);
+}
+
+.shell-header-avatar {
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  margin-right: 5px;
+}
+
+.shell-header-profile-selected {
+  font-weight: bolder;
+  color: var(--primary);
+}
+
+.shell-footer {
+  padding: 0 1rem;
+}
+
+.center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* MUST DELETE NOW IS ON .module on certain folder*/
+.fa-stack-1x {
+  text-align: right !important;
+  bottom: 0 !important;
+  line-height: normal !important;
+  cursor: pointer;
+}
+
+.fa-stack-2x {
+  font-size: 1.4em !important;
+}
+
+div.tasks_row__mUqkg {
+  width: 100% !important;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+input[type='time']::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
