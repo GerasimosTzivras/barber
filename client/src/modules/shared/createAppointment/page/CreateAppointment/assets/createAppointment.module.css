@@ -1,0 +1,9 @@
+.accordionFixedWidth {
+    width: 200vh !important;
+    max-width: 100%;
+   
+}
+.outsideAccordion {
+    background-color: #282c34;
+    color: #d19f68;
+}

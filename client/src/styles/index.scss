@@ -6,6 +6,11 @@ body {
   height: 100vh;
   overflow: hidden;
   font-size: 0.85rem !important;
+  background-image: url('../assets/backGround.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.95;
 }
 
 #root {

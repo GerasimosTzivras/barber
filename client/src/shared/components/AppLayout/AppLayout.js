@@ -1,7 +1,19 @@
 import clsx from "clsx";
 
-import { useTheme } from "shared/hooks";
+import { useTheme } from "shared";
 import styles from "./app-layout.module.scss";
+
+function Left({ children }) {
+  const theme = useTheme("shared.appLayout.left");
+  return (
+    <div
+      data-tut="menu-left"
+      className={clsx("overflow-hidden", styles.left, ...theme.classes)}
+    >
+      {children}
+    </div>
+  );
+}
 
 function Main({ children, overflow = "auto" }) {
   const theme = useTheme("shared.appLayout.main");
@@ -12,11 +24,22 @@ function Main({ children, overflow = "auto" }) {
   );
 }
 
+function Right({ children }) {
+  const theme = useTheme("shared.appLayout.right");
+  return (
+    <div className={clsx("overflow-hidden", styles.right, ...theme.classes)}>
+      {children}
+    </div>
+  );
+}
+
 function Feature({ children }) {
   return <>{children}</>;
 }
 
+Feature.Left = Left;
 Feature.Main = Main;
+Feature.Right = Right;
 
 function Header({ children }) {
   const theme = useTheme("shared.appLayout.header");
@@ -36,7 +59,7 @@ function Footer({ children }) {
   );
 }
 
-function AppLayout({ children, tourOpen, setTourOpen }) {
+function AppLayout({ children }) {
   const theme = useTheme("shared.appLayout");
   return (
     <div className={clsx(styles.layout, ...theme.classes)}>
